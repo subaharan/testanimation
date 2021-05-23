@@ -1,0 +1,42 @@
+class Strings {
+  Strings._();
+
+  static const String welcome = 'Welcome';
+  static const String to_room_control = 'to Room Control';
+  static const String username = 'Username';
+  static const String enter_username = 'Enter Username';
+  static const String invalid_username = 'Invalid Username';
+  static const String password = 'Password';
+  static const String enter_password = 'Enter Password';
+  static const String invalid_password = 'Invalid Password';
+  static const String sign_in = 'Sign In';
+  static const String sign_up = 'Sign Up';
+  static const String dont_have_account = "Don't have an account?";
+  static const String create_new_account = "Create New Account";
+  static const String back = "Back";
+  static const String emailid = 'Email ID';
+  static const String enter_emailid = 'Enter Email ID';
+  static const String invalid_emailid = 'Invalid Email ID';
+  static const String i_accepted_the = 'I have accepted the';
+  static const String terms_condition = 'Terms & Condition';
+  static const String let_get_started = "Let's get you started";
+  static const String control_panel = "Control Panel";
+  static const String all_rooms = "All Rooms";
+  static const String bed_room = "Bed Room";
+  static const String living_room = "Living Room";
+  static const String kitchen = "Kitchen";
+  static const String bathroom = "Bathroom";
+  static const String outdoor = "Outdoor";
+  static const String balcony = "Balcony";
+  static const String lights = "Lights";
+  static const String intensity = "Intensity";
+  static const String colors = "Colors";
+  static const String scenes = "Scenes";
+  static const String birthday = "Birthday";
+  static const String party = "Party";
+  static const String relax = "Relax";
+  static const String fun = "Fun";
+  static const String main_light = "Main Light";
+  static const String desk_light = "Desk Light";
+  static const String bed_light = "Bed Light";
+}
