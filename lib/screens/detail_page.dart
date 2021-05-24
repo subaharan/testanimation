@@ -48,7 +48,7 @@ Future<void> addLightdata() async {
     lightData.add(item3);
   });
 
-  await new Future.delayed(Duration(seconds: 1), (){
+  await new Future.delayed(Duration(milliseconds: 500), (){
    _controller.forward();
   });
 
