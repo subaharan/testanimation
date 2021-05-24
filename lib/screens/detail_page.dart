@@ -22,9 +22,11 @@ String title;
 }
 
 /// This is the private State class that goes with MyStatefulWidget.
-class _DetailPageState extends State<DetailPage> {
+class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin{
   int sliderValue = 100;
 int colorIndex=0;
+  AnimationController _controller;
+  Animation<Offset> _offsetFloat;
   static const List<MaterialColor> colorList = <MaterialColor>[
     Colors.purple,
     Colors.green,
@@ -36,7 +38,7 @@ int colorIndex=0;
   ];
 
   static List<LightObj> lightData= new List();
-void addLightdata(){
+Future<void> addLightdata() async {
   LightObj item1= new LightObj(image: Images.bright_bulb, title: Strings.main_light);
   LightObj item2= new LightObj(image: Images.desk, title: Strings.desk_light);
   LightObj item3= new LightObj(image: Images.bed_light, title: Strings.bed_light);
@@ -46,12 +48,32 @@ void addLightdata(){
     lightData.add(item3);
   });
 
+  await new Future.delayed(Duration(seconds: 1), (){
+   _controller.forward();
+  });
+
 }
  @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1000),
+    );
+
+    _offsetFloat = Tween<Offset>(begin: Offset(1.0, 0.0), end: Offset.zero)
+        .animate(_controller);
+
     addLightdata();
+
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -66,7 +88,9 @@ void addLightdata(){
               children: [
                 _profile(),
                 SizedBox(height: Utils.px_15 * SizeConfig.heightMultiplier,),
-                lightData==null?Container():_lightListView(),
+                lightData==null?Container():SlideTransition(position: _offsetFloat,
+                child: _lightListView()
+                ),
                 SizedBox(height: Utils.px_20 * SizeConfig.heightMultiplier,),
                 _mainWidget()
               ],
@@ -284,6 +308,7 @@ void addLightdata(){
 
   //------------------
   Widget _lightListView() {
+
     return SizedBox(
       height: Utils.px_60 * SizeConfig.heightMultiplier,
       child: ListView.builder(

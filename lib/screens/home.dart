@@ -74,7 +74,7 @@ Widget _mainWidget(BuildContext context) {
                 fit: FlexFit.tight,
                 child: GestureDetector(
                   onTap: (){
-                    startDetailPage(context, Strings.living_room, 2);
+                    startDetailPage(context, Strings.bed_room, 4);
                   },
                     child: _cardWidget(Strings.bed_room,  4, Images.bed, true))),
                 Flexible(
@@ -82,7 +82,7 @@ Widget _mainWidget(BuildContext context) {
                     fit: FlexFit.tight,
                     child: GestureDetector(
                         onTap: (){
-
+                          startDetailPage(context, Strings.living_room, 2);
                         },child: _cardWidget(Strings.living_room, 2, Images.room, false))),
               ],
             ),
@@ -96,14 +96,14 @@ Widget _mainWidget(BuildContext context) {
                     fit: FlexFit.tight,
                     child: GestureDetector(
                         onTap: (){
-
+                          startDetailPage(context, Strings.kitchen, 5);
                         },child: _cardWidget(Strings.kitchen,  5, Images.kitchen, true))),
                 Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
                     child: GestureDetector(
                         onTap: (){
-
+                          startDetailPage(context, Strings.bathroom, 1);
                         },child: _cardWidget(Strings.bathroom, 1, Images.bathtube, false))),
               ],
             ),
@@ -117,14 +117,14 @@ Widget _mainWidget(BuildContext context) {
                     fit: FlexFit.tight,
                     child: GestureDetector(
                         onTap: (){
-
+                          startDetailPage(context, Strings.outdoor, 5);
                         },child: _cardWidget(Strings.outdoor, 5, Images.house, true))),
                 Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
                     child: GestureDetector(
                         onTap: (){
-
+                          startDetailPage(context, Strings.balcony, 2);
                         },child: _cardWidget(Strings.balcony, 2, Images.balcony, false))),
               ],
             ),
